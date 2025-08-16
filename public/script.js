@@ -37,16 +37,17 @@ fetchAllButton.addEventListener('click', () => {
   .then(response => {
     console.log('raw response object:',response);
     if (response.ok) {
-      console.log('json response:',response.json());
-      return response.json();
+      const data= response.json();
+      console.log('response: ', data);
+      return data;
     } else {
       renderError(response);
       return Promise.reject(new Error ("Server responded  with error status"));
     }
   })
-  .then(response => {
-    console.log('response from server: ', response);
-    renderQuotes(response.quotes);
+  .then(data => {
+    console.log('response from server: ', data);
+    renderQuotes(data.quotes);
   }).catch((e)=> console.error('error:',e));
 });
 
