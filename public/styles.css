@@ -1,15 +1,18 @@
 body {
-  background-color: #2e4a99;
-  color: #fff;
+  background-image: url('./—Pngtree—inspirational\ quotes\ of\ purple\ watercolor_1629654.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Montserrat';
 }
 
 h1 {
   text-align: center;
   font-weight: bold;
+  font-size: 48px;
 }
 
 nav {
@@ -20,7 +23,7 @@ nav {
 }
 
 a {
-  color: #fff;
+  color: black
 }
 
 nav a {
@@ -36,21 +39,29 @@ nav a {
 input {
   font-size: 16px;
   padding: 10px;
+  border: 1px solid gray;
+  border-radius: 20px;
+  font-family: 'Montserrat'
+
 }
 
 button {
-  margin: 5px;
+  margin: 10px;
   cursor: pointer;
-  border: 2px solid #fff;
-  background-color: #2e4a99;
-  color: #fff;
-  padding: 10px;
+  border: 1px solid #cc6eef;
+  background-color: #cc6eef;
+  color: black;
+  padding: 10px 15px;
   font-size: 16px;
+  border-radius: 20px;
+  font-family: 'Montserrat'
 }
 
 button:hover {
-  background-color: #5788fa;
+  background-color: purple;
   transition: background-color 0.2s;
+  color: white;
+  border: 0px;
 }
 
 #quote-container {
@@ -65,3 +76,4 @@ button:hover {
 .quote-text {
   font-style: italic;
 }
+

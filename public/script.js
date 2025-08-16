@@ -18,6 +18,7 @@ const renderError = response => {
 
 const renderQuotes = (quotes = []) => {
   resetQuotes();
+  console.log('i am renderQuotes function and i am running');
   if (quotes.length > 0) {
     quotes.forEach(quote => {
       const newQuote = document.createElement('div');
@@ -32,17 +33,21 @@ const renderQuotes = (quotes = []) => {
 }
 
 fetchAllButton.addEventListener('click', () => {
-  fetch('/api/quotes')
+  fetch('/api/quotes/all')
   .then(response => {
+    console.log('raw response object:',response);
     if (response.ok) {
+      console.log('json response:',response.json());
       return response.json();
     } else {
       renderError(response);
+      return Promise.reject(new Error ("Server responded  with error status"));
     }
   })
   .then(response => {
+    console.log('response from server: ', response);
     renderQuotes(response.quotes);
-  });
+  }).catch((e)=> console.error('error:',e));
 });
 
 fetchRandomButton.addEventListener('click', () => {
